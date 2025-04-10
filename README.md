@@ -1,39 +1,29 @@
-# 🔐 ESP32 + RC522 RFID Access Control System
+# ESP32 + RC522 RFID Access Control System
 
-A smart access control system using **ESP32**, **RFID RC522**, **Google Sheets**, and **Wi-Fi** — perfect for labs, hostels, or small offices! Logs entries automatically to a Google Sheet, with **green/red LED feedback** for authorized/unauthorized users.
+A smart access control system using **ESP32**, **RFID RC522**, **Google Sheets**, and **Wi-Fi** . Logs entries automatically to a Google Sheet, with **green/red LED feedback** for authorized/unauthorized users and alerts the admin via email for unauthorized access.
 
-> 🎥 **Demo Video**: [Watch on YouTube](https://your-youtube-link-here.com)
+> **Demo Video**: [Watch on YouTube](https://youtu.be/Rjnas63PPxo)
 
----
 
-## 📦 Features
+##  Features
 
-- ✅ RFID-based access validation  
-- ☁️ Real-time logging to Google Sheets via Apps Script  
-- 🔴 Red & 🟢 Green LED feedback  
-- 🔐 Modular secrets file  
-- 📶 Wi-Fi connectivity
+-  RFID-based access validation  
+-  Real-time logging to Google Sheets via Apps Script  
+-  Red & Green LED feedback  
+-  Email alerts for unauthorized access  
+-  Wi-Fi connectivity
 
----
 
-## 🔌 Hardware Connections
+## Hardware Connections
 
 Here's the wiring diagram for connecting **ESP32 ↔ RC522** and LEDs:
 
 ![ESP32 RC522 Wiring Diagram](wiring/Connections.png)
 
----
 
-### 💡 ESP32 to LEDs
+ Use a 220Ω resistor with each LED to avoid burning them out.
 
-```c
-#define RED_LED    4
-#define GREEN_LED  5
-```
-
-📝 Use a 220Ω resistor with each LED to avoid burning them out.
-
-## 🧾 How to Set Up the Google Sheets App Script
+## Setting Up Google Sheets App Script
 
 1. **Open your Google Sheet** Create a new sheet to store RFID scan logs.
 2. **Open Apps Script Editor** Go to `Extensions` → `Apps Script`.
@@ -50,18 +40,9 @@ Here's the wiring diagram for connecting **ESP32 ↔ RC522** and LEDs:
 
 ## ⚠️ Security Notes
 
-* Keep your `secrets.h` file private — it contains credentials and API endpoints.
-* When pushing to GitHub, ensure only placeholder values like:
+* Keep your `secrets.h` file private — it contains credentials like Wi-Fi and email passwords.
 
-```c
-#define WIFI_SSID "your_wifi"
-#define WIFI_PASSWORD "your_password"
-#define SCRIPT_URL "https://script.google.com/macros/s/..."
-```
-
-* Use a `.gitignore` to avoid committing actual secrets.
-
-## 🙌 Acknowledgements
+## Acknowledgements
 
 * ESP32
 * MFRC522 Arduino Library
